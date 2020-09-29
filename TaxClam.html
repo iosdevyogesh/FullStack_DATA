@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>TaxClaimForm</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+	<script type="text/javascript">
+	function ValEmpId()
+	{
+	let x= document.getElementById("EmpId").value;
+	let submitOK = "true"
+			if (x.length=="")
+			{
+				alert("Employee ID cannot be empty in English");
+				submitOK = "false"
+			}
+			else if (x.length<5)
+			{
+				alert("Employee ID should be atleast 5 characters");
+				submitOK = "false"
+			}
+}
+	</script>
+</head>
+<body>
+<div class="container" style="max-width: 24rem">
+<form action="#" onsubmit="return validate()">
+	<fieldset class="form-group">
+		<label for="EmpId">Employee ID In English</label>
+		<input type="text" class="form-control" id="EmpId" name="EmpId" size="10">
+	</fieldset>
+	<fieldset class="form-group">
+		<label for="ExpType">Expense Type In English</label>
+		<div class="dropdown">
+		<button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" id="Select">
+		Select
+	</button>
+	<div class="dropdown-menu" labbelledby="Select">
+		<a class="dropdown-item" href="#">MedicalExpense</a>
+		<a class="dropdown-item" href="#">TravelExpense</a>
+		<a class="dropdown-item" href="#">FoodExpense </a>
+	</div>
+	</div>
+	</fieldset>
+	<fieldset class="form-group">
+		<label for="ExpAmt">Expense Amount In English</label>
+		<input type="text" class="form-control" name="ExpAmt" id="lastNaExpAmt">
+	</fieldset>
+	<button type="submit" class="btn btn-success">Calculate Claim</button>
+	<button type="submit" class="btn btn-primary" onclick="this.form.reset();">Clear</button>
+</form>
+</div>
+<!--JS-->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+</body>
+</html>

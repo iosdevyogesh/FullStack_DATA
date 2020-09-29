@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script language="JavaScript" type="text/javascript">
+        var myNumbers=[10,20,30,40,"Hello"];
+        for (var i in myNumbers)
+        {
+            console.log("myNumbers[",i,"] : ",myNumbers[i]);
+        }
+        console.log("length of the defined array is: ",myNumbers.length);
+
+function myfunction()
+{
+            var someArray = [12,22,33,40,"Hello",32];
+            var out = 0;
+            for (i in someArray){
+                if(!(isNaN( someArray[i]))){
+                    out = out + someArray[i];
+                }
+                console.log("Output:: " + out)
+            }
+        }
+    </script>
+    <title>Title</title>
+</head>
+<body>
+  <p>Click the following button to see the function in action</p>  
+<input type = "button" onclick = "myfunction()" value = "Display">  
+
+</body>
+</html>
