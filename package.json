@@ -1,19 +1,18 @@
 {
-  "name": "get-post-generies-end-point",
+  "name": "generes-end-points",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon index.js",
-    "start-server": "nodemon index.js"
+    "start": "nodemon index.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.1",
-    "joi": "^17.2.1",
+    "joi": "^13.1.0",
     "nodemon": "^2.0.4"
   }
 }
