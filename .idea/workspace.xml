@@ -5,7 +5,6 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,7 +46,11 @@
       <updated>1601957824782</updated>
       <workItem from="1601957825896" duration="1042000" />
       <workItem from="1601958883838" duration="2979000" />
-      <workItem from="1601965839862" duration="247000" />
+      <workItem from="1601965839862" duration="1707000" />
+      <workItem from="1601968033766" duration="477000" />
+      <workItem from="1601968607821" duration="7000" />
+      <workItem from="1601969025130" duration="11000" />
+      <workItem from="1601976336798" duration="53000" />
     </task>
     <task id="LOCAL-00001" summary="added get method">
       <created>1601959181403</created>
@@ -56,7 +59,14 @@
       <option name="project" value="LOCAL" />
       <updated>1601959181403</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="added &quot;joi&quot;: &quot;^13.1.0&quot; and checking name with length">
+      <created>1601966280804</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1601966280804</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -64,17 +74,18 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="added get method" />
-    <option name="LAST_COMMIT_MESSAGE" value="added get method" />
+    <MESSAGE value="added &quot;joi&quot;: &quot;^13.1.0&quot; and checking name with length" />
+    <option name="LAST_COMMIT_MESSAGE" value="added &quot;joi&quot;: &quot;^13.1.0&quot; and checking name with length" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="264" y="0" key="CommitChangelistDialog2" timestamp="1601959180837">
+    <state x="264" y="0" key="CommitChangelistDialog2" timestamp="1601966279946">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="264" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1601959180837" />
-    <state x="233" y="73" key="Vcs.Push.Dialog.v2" timestamp="1601959211745">
+    <state x="264" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1601966279946" />
+    <state x="233" y="73" key="Vcs.Push.Dialog.v2" timestamp="1601966302980">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="233" y="73" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1601959211745" />
+    <state x="233" y="73" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1601966302980" />
     <state x="303" y="74" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog" timestamp="1601959124031">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
