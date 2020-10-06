@@ -46,7 +46,8 @@
       <workItem from="1601968021338" duration="585000" />
       <workItem from="1601968615957" duration="408000" />
       <workItem from="1601969037364" duration="1912000" />
-      <workItem from="1601976477269" duration="153000" />
+      <workItem from="1601976477269" duration="823000" />
+      <workItem from="1601979486147" duration="85000" />
     </task>
     <task id="LOCAL-00001" summary="Added movies rating excercise1">
       <created>1601969531509</created>
@@ -55,7 +56,14 @@
       <option name="project" value="LOCAL" />
       <updated>1601969531509</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Added put method">
+      <created>1601976663276</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1601976663276</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -63,17 +71,18 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Added movies rating excercise1" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added movies rating excercise1" />
+    <MESSAGE value="Added put method" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added put method" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="264" y="0" key="CommitChangelistDialog2" timestamp="1601969530915">
+    <state x="264" y="0" key="CommitChangelistDialog2" timestamp="1601976660991">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="264" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1601969530915" />
-    <state x="233" y="73" key="Vcs.Push.Dialog.v2" timestamp="1601969578332">
+    <state x="264" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1601976660991" />
+    <state x="233" y="73" key="Vcs.Push.Dialog.v2" timestamp="1601976675446">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="233" y="73" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1601969578332" />
+    <state x="233" y="73" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1601976675446" />
     <state x="443" y="247" key="git4idea.remote.GitConfigureRemotesDialog" timestamp="1601969442351">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
