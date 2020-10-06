@@ -44,6 +44,18 @@ app.post('/api/movies', (req, res) => {
 });
 
 
+app.put('/api/movies/:id', (req, res) => {
+    const moviee = movies.find(c => c.id === parseInt(req.params.id));
+    if (!movie) return res.status(404).send('The movie with the given ID was not found.');
+
+    const { error } = validatemovie(req.body);
+    if (error) return res.status(400).send(error.details[0].message);
+    console.log(movie.name);
+    movie.name = req.body.name;
+    console.log(movie.name);
+    res.send(movie);
+});
+
 let port=process.env.PORT || 3000;
 app.listen(port, function(){
     console.log('server started listening on port number',port);
