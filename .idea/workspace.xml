@@ -4,7 +4,6 @@
     <list default="true" id="81bdf6b6-7360-47d2-91fd-fa0b9474c45b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,7 +49,9 @@
       <workItem from="1601968033766" duration="477000" />
       <workItem from="1601968607821" duration="7000" />
       <workItem from="1601969025130" duration="11000" />
-      <workItem from="1601976336798" duration="53000" />
+      <workItem from="1601976336798" duration="138000" />
+      <workItem from="1601979465122" duration="19000" />
+      <workItem from="1601979637116" duration="4000" />
     </task>
     <task id="LOCAL-00001" summary="added get method">
       <created>1601959181403</created>
@@ -66,7 +67,14 @@
       <option name="project" value="LOCAL" />
       <updated>1601966280804</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="added put method">
+      <created>1601976417544</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1601976417544</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -75,17 +83,18 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="added get method" />
     <MESSAGE value="added &quot;joi&quot;: &quot;^13.1.0&quot; and checking name with length" />
-    <option name="LAST_COMMIT_MESSAGE" value="added &quot;joi&quot;: &quot;^13.1.0&quot; and checking name with length" />
+    <MESSAGE value="added put method" />
+    <option name="LAST_COMMIT_MESSAGE" value="added put method" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="264" y="0" key="CommitChangelistDialog2" timestamp="1601966279946">
+    <state x="264" y="0" key="CommitChangelistDialog2" timestamp="1601976416184">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="264" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1601966279946" />
-    <state x="233" y="73" key="Vcs.Push.Dialog.v2" timestamp="1601966302980">
+    <state x="264" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1601976416184" />
+    <state x="233" y="73" key="Vcs.Push.Dialog.v2" timestamp="1601976429952">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="233" y="73" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1601966302980" />
+    <state x="233" y="73" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1601976429952" />
     <state x="303" y="74" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog" timestamp="1601959124031">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
