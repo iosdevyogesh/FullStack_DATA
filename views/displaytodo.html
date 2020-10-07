@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>Add To Do</title>
+
+  <link rel="stylesheet" href="/css/main.css">
+
+</head>
+
+
+
+<body>
+
+    <header class="main-header">
+
+        <nav class="main-header__nav">
+
+            <ul class="main-header__item-list">
+
+                <li class="main-header__item"><a class="active" href="/">Display All</a></li>
+
+                <li class="main-header__item"><a href="/admin/add-todo">Add Todo</a></li>
+                <li class="main-header__item"><a href="/display">Display Todo</a></li>
+
+            </ul>
+
+        </nav>
+
+    </header>
+
+
+
+    <main>
+
+    <form class="product-form" action="/admin/todo/1" method="POST">
+
+            <div class="form-control">
+
+                <label for="id">Todo ID</label>
+
+                <input type="number" name="todoid" id="todoid">
+
+             
+
+            </div>
+
+
+
+            <button type="submit">SEARCH TODO</button>
+
+        </form>
+    </main>
+
+</body>
+
+
+
+</html>
