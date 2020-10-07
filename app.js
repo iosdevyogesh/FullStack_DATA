@@ -1,10 +1,22 @@
+const path = require('path');
+
 const express = require('express');
 const bodyParser = require('body-parser');
+
 const app = express();
-app.use(express.static('public'))
+
 const adminRoutes = require('./routes/admin');
 const shopRoutes = require('./routes/shop');
+
 app.use(bodyParser.urlencoded({extended: false}));
-app.use('/admin',adminRoutes);
+
+app.use('/admin', adminRoutes);
 app.use(shopRoutes);
-app.listen(3000);
+
+app.use((req, res, next) => {
+    res.status(404).sendFile(path.join(__dirname, 'views', '404.html'));
+});
+const port=process.env.PORT || 3000;
+app.listen(port, function () {
+    console.log(`listening on port ${port}`);
+});
