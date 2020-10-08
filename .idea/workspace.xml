@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d63b9cf4-b9d3-4e29-8bff-ba798f457a21" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -46,7 +44,7 @@
       <option name="presentableId" value="Default" />
       <updated>1602132411418</updated>
       <workItem from="1602132412658" duration="2241000" />
-      <workItem from="1602137585895" duration="139000" />
+      <workItem from="1602137585895" duration="874000" />
     </task>
     <task id="LOCAL-00001" summary="MongoDB connection branch added">
       <created>1602132959913</created>
@@ -55,7 +53,14 @@
       <option name="project" value="LOCAL" />
       <updated>1602132959913</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="added getting student data from mongo DB">
+      <created>1602137752349</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1602137752349</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -63,21 +68,22 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="MongoDB connection branch added" />
-    <option name="LAST_COMMIT_MESSAGE" value="MongoDB connection branch added" />
+    <MESSAGE value="added getting student data from mongo DB" />
+    <option name="LAST_COMMIT_MESSAGE" value="added getting student data from mongo DB" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="130" y="0" key="CommitChangelistDialog2" timestamp="1602132957717">
+    <state x="130" y="0" key="CommitChangelistDialog2" timestamp="1602137751696">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="130" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1602132957717" />
+    <state x="130" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1602137751696" />
     <state x="142" y="0" key="SettingsEditor" timestamp="1602137497113">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="142" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1602137497113" />
-    <state x="233" y="73" key="Vcs.Push.Dialog.v2" timestamp="1602132984410">
+    <state x="233" y="73" key="Vcs.Push.Dialog.v2" timestamp="1602137768273">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="233" y="73" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1602132984410" />
+    <state x="233" y="73" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1602137768273" />
     <state x="443" y="247" key="git4idea.remote.GitConfigureRemotesDialog" timestamp="1602132899387">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
