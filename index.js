@@ -1,73 +1,63 @@
+const readline = require('readline');
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost:27017/play-ground',{ useNewUrlParser: true , useUnifiedTopology: true} )
-    .then(function(){
-        console.log('Connected to Mongo');
-    })
-    .catch(reason => {
-        console.log('Connection is not Unsuccessful..!',reason.message);
-    })
-
-const studentSchema=new mongoose.Schema(
-    {
-        firstName:String,
-        lastName:String,
-        email:String,
-        doj:{type: Date,default:Date.now()}
-    });
-
-const Student=mongoose.model('Student',studentSchema);
-/*
-let student=new Student({
-    firstName: 'Sachin',
-    lastName: 'Tendulkar',
-    email: 'sachin@email.com',
-    doj: new Date(2020,2,12)
+let rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout
 });
-async function createStudent()
-{
-    let result = await student.save();
-    console.log(result);
-}
-createStudent().then(function (){
-    console.log('Student created: ');
-}).catch(error => {
-    console.log('Error creating student:',error.message);
-});
-*/
-async function getStudents()
-{
-    let result = await Student.find();
-    console.log('displaying students',result);
-    console.log('called getStudents()');
-}
-
-/*async function run()
-{
-    getStudents().then(function(){
-        console.log('called run function');
-    }).catch(error => {
-        console.log(error.message);
-    })
-}
-run().then(function () {
-    console.log('finished running');
-}).catch(error => {
-    console.log(error.message);
-});*/
-
-async function findStudentByID(id)
-{
-    await Student.findById(id).then(function (result) {
-        console.log('Student found:',result);
-
-    }).catch(error => {
-        console.log('Error finding student with ID: ',id);
-    });
-}
-
-findStudentByID('5f7eaa007752505244284138').then(()=>{
-    console.log('finished finding student')
-
+//step-1
+// connect with db
+mongoose.connect('mongodb://localhost/play-ground', {
+    useUnifiedTopology: true,
+    useNewUrlParser: true
+}).then(function () {
 }).catch(reason => {
-    console.log('Error with finding student')
+    console.log('error connecting.');
+});
+
+//step-2
+//create schema
+const courseSchema = new mongoose.Schema({
+    name: String,
+    author: String,
+    tags: [String],
+    date: {type: Date, default: Date.now()},
+    isPublished: Boolean,
+    price: Number
+});
+
+
+const Course = mongoose.model('Course', courseSchema);
+course = new Course();
+let answers = [];
+let tempTags = [];
+let name = '';
+let author = '';
+let published = false;
+let price='';
+
+async function readData() {
+    rl.question('name? author? tags? published?price? ', answer => {
+        answers = answer.split(',');
+        console.log(answers);
+        name = answers[0];
+        author = answers[1];
+        tempTags= answers[2].split(' ');
+        published=answers[3]
+        price=answers[4];
+        course.set({name: name});
+        course.set({author: author});
+        course.set( {tags: tempTags});
+        course.set( {isPublished: published});
+        course.set({price: parseInt(price)});
+        course.save();
+        rl.close();
+    });
+
+}
+
+
+readData().then(function (){
+    console.log('successfully done');
+}).catch(reason => {
+    console.log('failed',reason.message);
 });
