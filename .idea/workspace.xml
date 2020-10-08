@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d63b9cf4-b9d3-4e29-8bff-ba798f457a21" name="Default Changelist" comment="" />
+    <list default="true" id="d63b9cf4-b9d3-4e29-8bff-ba798f457a21" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/index.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -14,7 +18,11 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1ia4Xq1tEzbEozdqSCYsm5pSW1S" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -26,6 +34,7 @@
     <property name="javascript.nodejs.core.library.typings.version" value="14.11.5" />
     <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -36,11 +45,42 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1602132411418</updated>
-      <workItem from="1602132412658" duration="454000" />
+      <workItem from="1602132412658" duration="2241000" />
+      <workItem from="1602137585895" duration="139000" />
     </task>
+    <task id="LOCAL-00001" summary="MongoDB connection branch added">
+      <created>1602132959913</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1602132959913</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="MongoDB connection branch added" />
+    <option name="LAST_COMMIT_MESSAGE" value="MongoDB connection branch added" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="130" y="0" key="CommitChangelistDialog2" timestamp="1602132957717">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="130" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1602132957717" />
+    <state x="142" y="0" key="SettingsEditor" timestamp="1602137497113">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="142" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1602137497113" />
+    <state x="233" y="73" key="Vcs.Push.Dialog.v2" timestamp="1602132984410">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="233" y="73" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1602132984410" />
+    <state x="443" y="247" key="git4idea.remote.GitConfigureRemotesDialog" timestamp="1602132899387">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="443" y="247" key="git4idea.remote.GitConfigureRemotesDialog/0.0.1280.680@0.0.1280.680" timestamp="1602132899387" />
   </component>
 </project>
