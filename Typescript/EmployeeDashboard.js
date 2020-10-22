@@ -1,0 +1,17 @@
+"use strict";
+exports.__esModule = true;
+var RegularEmployee_1 = require("./RegularEmployee");
+var Consultant_1 = require("./Consultant");
+var EmployeeType_1 = require("./EmployeeType");
+var regEmp = new RegularEmployee_1.RegularEmployee("John", "Smith", "jsmith@test.com", 3456);
+regEmp.displayEmployee();
+var regEmp2 = new RegularEmployee_1.RegularEmployee("Wish", "Will", "wislh@test.com", 421);
+regEmp2.displayEmployee();
+var consEmp = new Consultant_1.Consultant("Joest", "poo", "test@tets.com", 34, EmployeeType_1.EmployeeType.DEVELOPER);
+consEmp.displayEmployee();
+regEmp2.createEmployee("Dash", "Will", "jwill@test.com");
+regEmp2.salary = 3456;
+consEmp.createEmployee("Bosh", "Node", "tenode@tets.com");
+consEmp.hourlyamount = 34;
+consEmp.specialization = EmployeeType_1.EmployeeType.DEVELOPER;
+consEmp.displayEmployee();
