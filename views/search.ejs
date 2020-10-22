@@ -1,0 +1,34 @@
+<%- include('includes/head.ejs') %>
+<link rel='stylesheet' href='/stylesheets/common.css' />
+<!--<link rel='stylesheet' href='/stylesheets/style.css' />-->
+</head>
+<script src="/javascripts/common.js"></script>
+<body class="container">
+<%- include('includes/nav.ejs') %>
+<h1>Search Users</h1>
+
+<% if (!!data.customer) { %>
+    <!--<h1>Welcome <%= data.customer %></h1>-->
+    <% data.customer.forEach(function(cust) { %>
+
+    <div>
+        <img src="data:image/<%=cust.profilepic.contentType%>;base64,
+                     <%=cust.profilepic.imgdata.toString('base64')%>" width="300" height="250">
+        <div>
+            <p><%= cust.firstname %></p>
+            <p><%= cust.lastname %></p>
+
+
+            <button onClick="getFollowers()" >Get Followers </button>
+
+
+
+        </div>
+    </div>
+
+<% })
+}
+%>
+
+</body>
+</html>
