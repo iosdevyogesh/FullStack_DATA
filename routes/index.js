@@ -4,13 +4,16 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { data:{ titleView: 'Welcome Page'} });
+	if (req.session.isLoggedIn) {
+		res.render('index', { data:{ titleView: 'Welcome Page', customer: req.session.user , isAuthenticated: req.session.isLoggedIn} });
+	} else
+	{
+		res.render('index', { data:{ titleView: 'Welcome Page', isAuthenticated: false} });		
+	}
+  
 });
 
-/* GET home page. */
-router.get('/search', function(req, res, next) {
-  res.render('search', { data:{ titleView: 'Search Page'} });
-});
+
 
 
 

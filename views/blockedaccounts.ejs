@@ -1,6 +1,5 @@
 <%- include('includes/head.ejs') %>
 
-
 </head>
 <script src="/javascripts/common.js"></script>
 <body class="container">
@@ -14,19 +13,12 @@
     <div class="col-md-6">
 
 
-        <h1>Search Page</h1>
-        <h3>All Users</h3>
-
+        <h1>Blocked Accounts Page</h1>
 		<% if (!!data.customer) { %>
-		    <% if (!!data.users) { 
-		    %>
-		    <br>
-        	<br>
-		        <% data.users.forEach(function(cust) { 
-		        %>
-		        
-		       
-			<div class="center">
+		    <% if (!!data.blockedUsers) { %>
+
+		    <% if (!!data.users) { %>
+		        <% data.users.forEach(function(cust) { %>
 		    <div>
 		        <img src="data:image/<%=cust.profilepic.contentType%>;base64,
 		                     <%=cust.profilepic.imgdata.toString('base64')%>" width="300" height="250">
@@ -35,25 +27,27 @@
 		            <p><%= cust.lastname %></p>
 
 
-		            <button class="btn btn-secondary" onClick="addFollowers('<%= data.customer._id %>','<%= cust._id %>')" >Follow </button>
-		            <button class="btn btn-secondary" onClick="blockUser('<%= data.customer._id %>','<%= cust._id %>')" >Block </button>
+		            <button class="btn btn-secondary" onClick="unblockUser('<%= data.customer._id %>','<%= cust._id %>')" >UnBlock User</button>
 
 
 
 		        </div>
 		    </div>
-			</div>
-
-
 		    <% })
 		    }
-		    } 
+		    } else {
 		    %>
 
+		    <p>No Blocked Users found</p>
+		<%}
+		    }
+		    %>
 
 
     </div>
 </div>
+
+
 
 </body>
 </html>

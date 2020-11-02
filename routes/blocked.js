@@ -30,14 +30,14 @@ router.post('/add-blocker',async function(req, res, next) {
     console.log(req.body);
     console.log("inside add blocker");
 
-    const customer = await Customer.find({userId: req.body.blockedUserId });
+    const customer = await Customer.find({userId: req.body.blockuserId });
     console.log('Customer'+customer);
     if (!!customer) {
         let blockers = {
             userId: req.body.userId,
-            blockedUserId: req.body.blockedUserId,
+            blockedUserId: req.body.blockuserId,
         };
-        console.log("Follower initialized");
+        console.log("Blocker initialized");
         Blockedusers.create(blockers, (err, item) => {
             if (err) {
 
@@ -55,11 +55,24 @@ router.post('/add-blocker',async function(req, res, next) {
 
 
 });
-
+/*
 router.delete('/:userId', async function(req, res, next) {
 
     console.log(req.params.userId);
     const result = await Blockedusers.deleteMany({userId:req.params.userId});
+    console.log(result);
+
+    res.send({success: true,  message: "record deleted"});
+    //res.send('respond with a delete resource');
+});
+*/
+
+router.delete('/unblock', async function(req, res, next) {
+    console.log("Inside unblock");
+    console.log(req.body.userId);
+    console.log("Inside unblock");
+    console.log(req.body.blockuserId);
+    const result = await Blockedusers.deleteOne({userId:req.body.userId, blockedUserId:req.body.blockuserId});
     console.log(result);
 
     res.send({success: true,  message: "record deleted"});

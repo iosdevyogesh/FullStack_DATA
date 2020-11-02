@@ -39,6 +39,8 @@ router.get('/updateUser', async function(req, res, next) {
   res.render('editprofile', {data:{ titleView: 'Update Profile Page',customer: customer}});
 });
 
+
+
 router.post('/add-user',uploader.single('profilePicture'), async (req, res) => {
 //  const { error } = validate(req.body);
  // if (error) return res.status(400).send(error.details[0].message);
@@ -94,7 +96,18 @@ router.post('/login', async function(req, res, next) {
         if(!!result) {
           let resstr="";
           resstr=require(__dirname + '/../utility/token')( customer , resstr);
-          res.render('index', {data:{ titleView: 'Welcome Page',customer: customer, token: resstr}});
+
+          req.session.isLoggedIn = true;
+          req.session.user = customer;
+          req.session.save(err => {
+              console.log(err);
+             // res.render('index', {data:{ titleView: 'Welcome Page',customer: customer, token: resstr}});
+             res.redirect('/');
+
+          });  
+
+
+          //res.render('index', {data:{ titleView: 'Welcome Page',customer: customer, token: resstr}});
 
         }
         else {

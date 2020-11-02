@@ -1,17 +1,19 @@
-<div class="d-flex bd-highlight bg-dark ">
-    <div class="p-2 flex-grow-1 bd-highlight"><a href="#" class="nav-link text-white font-weight-bolder">Pixogram</a></div>
+<div class="d-flex bd-highlight bg-warning ">
+    <div class="p-2 flex-grow-1 bd-highlight"><a href="#" class="nav-link text-dark font-weight-bolder">Pixogram</a></div>
 
-    <div class="p-2 bd-highlight"><a href="/" class="nav-link text-white">Home</a></div>
+    <div class="p-2 bd-highlight"><a href="/" class="nav-link text-dark font-weight-bolder">Home</a></div>
 
-    <% if (!!data.customer) { %>
-        <div class="p-2 bd-highlight"><a href="/users/updateuser" class="nav-link text-white">Profile</a></div>
-        <div class="p-2 bd-highlight"><a href="/followers/<%= data.customer._id %>" class="nav-link text-white">Followers</a></div>
-        <div class="p-2 bd-highlight"><a href="/media/<%= data.customer._id %>" class="nav-link text-white">My Media</a></div>
+    <% if (data.isAuthenticated) { %>
+        <div class="p-2 bd-highlight"><a href="/account/update" class="nav-link text-dark font-weight-bolder">Account</a></div>
+        <div class="p-2 bd-highlight"><a href="/followers/<%= data.customer._id %>" class="nav-link text-dark font-weight-bolder">Followers</a></div>
+        <div class="p-2 bd-highlight"><a href="/upload/<%= data.customer._id %>" class="nav-link text-dark font-weight-bolder">Upload Media</a></div>
+        <div class="p-2 bd-highlight"><a href="/media/<%= data.customer._id %>" class="nav-link text-dark font-weight-bolder">My Media</a></div>
+        <div class="p-2 bd-highlight"><a href="/account/logout %>" class="nav-link text-dark font-weight-bolder">Logout</a></div>
     <% }
     else {
     %>
-        <div class="p-2 bd-highlight"><a href="/users/login" class="nav-link text-white">Login</a></div>
-        <div class="p-2 bd-highlight"><a href="/users/signup" class="nav-link text-white">Register</a></div>
+        <div class="p-2 bd-highlight"><a href="/users/login" class="nav-link text-dark font-weight-bolder">Login</a></div>
+        <div class="p-2 bd-highlight"><a href="/users/signup" class="nav-link text-dark font-weight-bolder">Register</a></div>
     <%
     }%>
 

@@ -1,6 +1,5 @@
 <%- include('includes/head.ejs') %>
-<link rel='stylesheet' href='/stylesheets/common.css' />
-<!--<link rel='stylesheet' href='/stylesheets/style.css' />-->
+
 </head>
 
 <script type="text/javascript">
@@ -15,47 +14,53 @@
 <body class="container">
 <%- include('includes/nav.ejs') %>
 <h1> My Media</h1>
-<% if (!!data.media) { %>
+<% if (!!data.media) { 
+%>
+    
     <% data.media.forEach(function(med) { %>
 
-    <div>
+    <div class="row center">
 
-        <div>
-            <table>
-                <tr>
-                    <td>  <img src="data:image/<%=med.media.contentType%>;base64,
-                     <%=med.media.imgdata.toString('base64')%>" width="300" height="250"></td>
-                    <td>Media Title : <p><%= med.mediatitle %></p>
-                        Media Description: <p><%= med.description %>
-                    </td>
-                    <td>
-                        Comments
-                        <form action="/media/add-comments"  method="POST">
-                           Add Comment <input type="text" name="comment" />
-                            <input type="text" class="form-control" id="username" name="username" value="<%= data.customer._id %>" required="true" placeholder="Username"/>
-                            <input type="submit" />
-                        </form>
+        <div class="col-md-4">
+        <img src="data:image/<%=med.media.contentType%>;base64,
+                     <%=med.media.imgdata.toString('base64')%>" width="300" height="250">
+        </div>
+        <div class="col-md-6">
+        <h3>Media Title : </h3><p><%= med.mediatitle %></p>
+        <h3>Media Description: </h3><p><%= med.description %>
+        <br>
+        <h3>Comments </h3>
 
+        <% if (!!data.comments) { 
+            let medMap=data.comments;
+            let medcomments=medMap.get(med._id);
+            console.log("Inside med comments block");
+            console.log(medcomments);
+            if (!!medcomments && medcomments.length>0) {
 
-                    </td>
-
-
+            %>
 
 
+            <% medcomments.forEach(function(comment) { %>
+                    <% comment.forEach(function(medcom) { %>
 
+            <textarea readOnly name="comments" id="comments" style="font-family:sans-serif;font-size:1.2em;">
+            <%= medcom.comments %>
+            </textarea><br>
+            <%
+            })
+            })
+        }}
+        %>
+        <form action="/media/add-comments"  method="POST">
+           Add Comment <input type="text" name="comment" />
+            <input type="hidden" class="form-control" id="username" name="username" value="<%= data.customer._id %>" required="true" placeholder="Username"/>
+            <input type="hidden" class="form-control" id="mediaId" name="mediaId" value="<%= med._id %>" required="true" placeholder="Username"/>
+            <input class="btn btn-primary" type="submit" />
+        </form>
 
+        <button class="btn btn-secondary" onClick="deleteMedia('<%= data.customer._id %>','<%= med._id %>')">Delete Media </button>
 
-
-                </tr>
-                <tr>
-
-                    </td>
-
-                </tr>
-
-            </table>
-
-            <button onClick="deleteMedia('<%= data.customer._id %>','<%= med._id %>')">Delete Media </button>
 
 
 
@@ -63,117 +68,14 @@
     </div>
 
 <% })
-}
+}else {
+    %>
+
+    <p>No Media found</p>
+<%}
 %>
-<form id="form1" name="form1" method ="POST" action="/media/add-media" enctype="multipart/form-data">
-    <div>
-        <table class="center">
-            <tr>
-                <td>
-                    <div class="float-left"><label for="userId">userId</label></div>
-                    <div class="float-right">:</div>
-
-                </td>
-                <td>
-                    <div class='container'>
-                        <input type="text" class="form-control" id="userId" name="userId" value="<%= data.customer._id %>" required="true" placeholder="Username"/>
-                    </div>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <div class="float-left"><label for="mediatitle">Media Title</label></div>
-                    <div class="float-right">:</div>
-
-                </td>
-                <td>
-                    <div class='container'>
-                        <input type="text" class="form-control" id="mediatitle" name="mediatitle" required="true" placeholder="Media Title"/>
-                    </div>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <div class="float-left"><label for="description">Description</label></div>
-                    <div class="float-right">:</div>
-
-                </td>
-                <td>
-                    <div class='container'>
-                        <input type="text" class="form-control" id="description" name="description" required="true" placeholder="Description"/>
-                    </div>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <div class="float-left"><label for="tags">Tags</label></div>
-                    <div class="float-right">:</div>
-
-                </td>
-                <td>
-                    <div class='container'>
-                        <input type="text" class="form-control" id="tags" name="tags" required="true" placeholder="Tags"/>
-                    </div>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <div class="float-left"><label for="effects">Effects</label></div>
-                    <div class="float-right">:</div>
-
-                </td>
-                <td>
-                    <div class='container'>
-                        <input type="text" class="form-control" id="effects" name="effects" required="true" placeholder="Effects"/>
-                    </div>
-                </td>
-            </tr>
-
-            <tr>
-                <td>
-                    <div class="float-left"><label for="media">Media</label></div>
-                    <div class="float-right">:</div>
-
-                </td>
-                <td>
-                    <div class='container'>
-                        <input type="file" class="form-control" id="media" name="media" required="true" placeholder="Media"/>
-                    </div>
 
 
-                </td>
-            </tr>
-
-
-            <tr>
-                <td colspan="2" align="center">
-                    <button type="Submit" onclick="validateDetails()" class="btn btn-primary">Submit</button>
-                    <button type="button" onclick="this.form.reset();" class="btn btn-secondary">Clear</button>
-
-                </td>
-
-            </tr>
-
-
-
-
-
-
-            </tr>
-        </table>
-
-
-
-    </div>
-</form>
-
-
-<form action="/media/many"  enctype="multipart/form-data" method="POST">
-    Select images: <input type="file" name="image" multiple />
-
-    <input type="text" class="form-control" id="userId" name="userId" value="<%= data.customer._id %>" required="true" placeholder="Username"/>
-    <input type="submit" value="Upload your files"/>
-</form>
 
 
 </body>

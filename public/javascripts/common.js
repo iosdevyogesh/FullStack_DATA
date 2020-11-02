@@ -33,27 +33,79 @@ function getUsers() {
 
 }
 
-
-function unFollow(userId,followUserId) {
-
+function blockUser(userId,blockuserId) {
     alert("inside");
-
-    fetch("/followers/"+userId+"/"+followUserId, {
-        method: 'DELETE',
+    fetch("/blockers/add-blocker", {
+        method: 'POST',
         // body: JSON.stringify({user: document.getElementById.("username").value, password: $("#password").val()}),
-        //body: JSON.stringify({userId: userId, followeruserId: followeruserId}),
+        body: JSON.stringify({userId: userId, blockuserId: blockuserId}),
         headers: {
             'Content-type': 'application/json; charset=UTF-8', // Indicates the content
             //'Authorization':'jwt '+token
         }
     }).then(res => {
         console.log(res);// {success: true/false, data: {}, message: ""}
-
+        window.location.reload();
+        /*
         if(res.success){
             window.location.href = '/followers/'+userId;
         } else {
             alert(res.message);
+        }*/
+    }).catch(err => {
+        alert(err);console.log(err);
+    });
+   // window.location.href = '/search';
+
+}
+
+
+function unblockUser(userId,blockuserId) {
+    alert("inside");
+   // window.location.href = '/search';
+       fetch("/blockers/unblock", {
+        method: 'DELETE',
+        // body: JSON.stringify({user: document.getElementById.("username").value, password: $("#password").val()}),
+        body: JSON.stringify({userId: userId, blockuserId: blockuserId}),
+        headers: {
+            'Content-type': 'application/json; charset=UTF-8', // Indicates the content
+            //'Authorization':'jwt '+token
         }
+    }).then(res => {
+        console.log(res);// {success: true/false, data: {}, message: ""}
+        window.location.reload();
+        /*
+        if(res.success){
+            window.location.href = '/followers/'+userId;
+        } else {
+            alert(res.message);
+        }*/
+    }).catch(err => {
+        alert(err);console.log(err);
+    });
+
+}
+
+function unFollow(userId,followUserId) {
+
+    alert("inside");
+
+    fetch("/followers/", {
+        method: 'DELETE',
+        // body: JSON.stringify({user: document.getElementById.("username").value, password: $("#password").val()}),
+        body: JSON.stringify({userId: userId, followUserId: followUserId}),
+        headers: {
+            'Content-type': 'application/json; charset=UTF-8', // Indicates the content
+            //'Authorization':'jwt '+token
+        }
+    }).then(res => {
+        console.log(res);// {success: true/false, data: {}, message: ""}
+        window.location.reload();
+        /*if(res.success){
+            window.location.href = '/followers/'+userId;
+        } else {
+            alert(res.message);
+        }*/
     }).catch(err => {
         alert(err);console.log(err);
     });
@@ -165,13 +217,18 @@ function deleteMedia(username,id)
             //'Authorization':'jwt '+token
         }
     }).then(res => {
+        console.log("Got response");
         console.log(res);// {success: true/false, data: {}, message: ""}
-
+        window.location.reload();
+        /*
         if(res.success){
             window.location.href = '/media/'+username;
+            window.location.reload();
         } else {
+            alert("inside else")
             alert(res.message);
-        }
+            window.location.reload();
+        }*/
     }).catch(err => {
         alert(err);console.log(err);
     });

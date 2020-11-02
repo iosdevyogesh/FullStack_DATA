@@ -19,169 +19,179 @@
                         }
                         alert("Inside");
                         */
-            */
+
                 return false;
 
             }
 
     </script>
-<link rel='stylesheet' href='/stylesheets/common.css' />
+
 
 </head>
 <body class="container">
 <%- include('includes/nav.ejs') %>
-<br/>
-<br/>
-<h1 class="text-center">Profile Form</h1>
 
+<div class="row">
+    <div class="col-md-4">
 
-<form id="form1" name="form1" onSubmit="return false">
-    <div>
-        <table class="center">
-            <tr>
-                <td>
-                    <div class="float-left"><label for="firstName">First Name</label></div>
-                    <div class="float-right">:</div>
-
-                </td>
-                <td>
-                    <div class='container'>
-                        <input type="text" class="form-control" id="firstName"
-                                <% if (!!data.customer) { %>
-                               value="<%= data.customer.firstname %>"
-
-                                <% } %>
-
-                               name="firstName" required="true" placeholder="First Name"/>
-                    </div>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <div class="float-left"><label for="lastName">Last Name</label></div>
-                    <div class="float-right">:</div>
-
-                </td>
-                <td>
-                    <div class='container'>
-                        <input type="text" class="form-control" id="lastName"
-                        <% if (!!data.customer) { %>
-                               value="<%= data.customer.lastname %>"
-
-                                <% } %>
-                               name="lastName" required="true" placeholder="Last Name"/>
-                    </div>
-                </td>
-            </tr>
-            <!--<tr>
-                <td>
-                    <div class="float-left"><label for="userName">User Name</label></div>
-                    <div class="float-right">:</div>
-
-                </td>
-                <td>
-                    <div class='container'>
-                    <input type="text" class="form-control" id="userName" name="userName" pattern="^[A-Za-z][A-Za-z0-9 -]+$" minlength=8 maxlength=10 required="true" placeholder="User Name"/>
-                    </div>
-                </td>
-            </tr>-->
-            <tr>
-                <td>
-                    <div class="float-left"><label for="email">Email ID</label></div>
-                    <div class="float-right">:</div>
-
-                </td>
-                <td>
-                    <div class='container'>
-                        <input type="email" class="form-control" id="email"
-                        <% if (!!data.customer) { %>
-                               value="<%= data.customer.emailid %>"
-
-                                <% } %>
-                               name="email" required="true" placeholder="Email ID"/>
-                    </div>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <div class="float-left"><label for="dateofBirth">Date of Birth</label></div>
-                    <div class="float-right">:</div>
-                </td>
-                <td>
-                    <div class='container'>
-                        <input type="date" class="form-control" id="dateofBirth"
-                        <% if (!!data.customer) { %>
-                               value="<%= data.customer.dateofbirth %>"
-
-                                <% } %>
-                               name="dateofBirth" required="true" placeholder="Date of Birth"/>
-                    </div>
-                </td>
-            </tr>
-            <!--<tr>
-                <td>
-                    <div class="float-left"><label for="passwd">Password</label></div>
-                    <div class="float-right">:</div>
-
-                </td>
-                <td>
-                    <div class='container'>
-                    <input type="password" class="form-control" id="passwd" name="passwd" required="true" pattern="^[A-Za-z0-9#%$! -]+$" placeholder="Password"/>
-                    </div>
-
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <div class="float-left"><label for="confirmPassword">Confirm Password</label></div>
-                    <div class="float-right">:</div>
-
-                </td>
-                <td>
-                    <div class='container'>
-                    <input type="password" class="form-control" id="confirmPassword" name="confirmPassword" required="true" pattern="^[A-Za-z0-9#%$! -]+$" placeholder="Confirm Password"/>
-                    </div>
-
-                </td>
-            </tr>
-           -->
-            <tr>
-                <td>
-                    <div class="float-left"><label for="profilePicture">Profile Picture</label></div>
-                    <div class="float-right">:</div>
-
-                </td>
-                <td>
-                    <div class='container'>
-                        <input type="file" class="form-control" id="profilePicture" name="profilePicture" required="true" placeholder="Profile picture"/>
-                    </div>
-
-
-                </td>
-            </tr>
-
-
-            <tr>
-                <td colspan="2" align="center">
-                    <button type="Submit" onclick="validateDetails()" class="btn btn-primary">Submit</button>
-                    <button type="button" onclick="this.form.reset();" class="btn btn-secondary">Clear</button>
-
-                </td>
-
-            </tr>
-
-
-
-
-
-
-            </tr>
-        </table>
-
-
-
+        <%- include('includes/menu.ejs') %>
     </div>
-</form>
+
+    <div class="col-md-6">
+        <br/>
+        <br/>
+        <h1 class="text-center">Profile Form</h1>
+
+
+        <form id="form1" name="form1" onSubmit="return false">
+            <div>
+                <table class="center">
+                    <tr>
+                        <td>
+                            <div class="float-left"><label for="firstName">First Name</label></div>
+                            <div class="float-right">:</div>
+
+                        </td>
+                        <td>
+                            <div class='container'>
+                                <input type="text" class="form-control" id="firstName"
+                                        <% if (!!data.customer) { %>
+                                       value="<%= data.customer.firstname %>"
+
+                                        <% } %>
+
+                                       name="firstName" required="true" placeholder="First Name"/>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="float-left"><label for="lastName">Last Name</label></div>
+                            <div class="float-right">:</div>
+
+                        </td>
+                        <td>
+                            <div class='container'>
+                                <input type="text" class="form-control" id="lastName"
+                                <% if (!!data.customer) { %>
+                                       value="<%= data.customer.lastname %>"
+
+                                        <% } %>
+                                       name="lastName" required="true" placeholder="Last Name"/>
+                            </div>
+                        </td>
+                    </tr>
+                    <!--<tr>
+                        <td>
+                            <div class="float-left"><label for="userName">User Name</label></div>
+                            <div class="float-right">:</div>
+
+                        </td>
+                        <td>
+                            <div class='container'>
+                            <input type="text" class="form-control" id="userName" name="userName" pattern="^[A-Za-z][A-Za-z0-9 -]+$" minlength=8 maxlength=10 required="true" placeholder="User Name"/>
+                            </div>
+                        </td>
+                    </tr>-->
+                    <tr>
+                        <td>
+                            <div class="float-left"><label for="email">Email ID</label></div>
+                            <div class="float-right">:</div>
+
+                        </td>
+                        <td>
+                            <div class='container'>
+                                <input type="email" class="form-control" id="email"
+                                <% if (!!data.customer) { %>
+                                       value="<%= data.customer.emailid %>"
+
+                                        <% } %>
+                                       name="email" required="true" placeholder="Email ID"/>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="float-left"><label for="dateofBirth">Date of Birth</label></div>
+                            <div class="float-right">:</div>
+                        </td>
+                        <td>
+                            <div class='container'>
+                                <input type="date" class="form-control" id="dateofBirth"
+                                <% if (!!data.customer) { %>
+                                       value="<%= data.customer.dateofbirth %>"
+
+                                        <% } %>
+                                       name="dateofBirth" required="true" placeholder="Date of Birth"/>
+                            </div>
+                        </td>
+                    </tr>
+                    <!--<tr>
+                        <td>
+                            <div class="float-left"><label for="passwd">Password</label></div>
+                            <div class="float-right">:</div>
+
+                        </td>
+                        <td>
+                            <div class='container'>
+                            <input type="password" class="form-control" id="passwd" name="passwd" required="true" pattern="^[A-Za-z0-9#%$! -]+$" placeholder="Password"/>
+                            </div>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="float-left"><label for="confirmPassword">Confirm Password</label></div>
+                            <div class="float-right">:</div>
+
+                        </td>
+                        <td>
+                            <div class='container'>
+                            <input type="password" class="form-control" id="confirmPassword" name="confirmPassword" required="true" pattern="^[A-Za-z0-9#%$! -]+$" placeholder="Confirm Password"/>
+                            </div>
+
+                        </td>
+                    </tr>
+                   -->
+                    <tr>
+                        <td>
+                            <div class="float-left"><label for="profilePicture">Profile Picture</label></div>
+                            <div class="float-right">:</div>
+
+                        </td>
+                        <td>
+                            <div class='container'>
+                                <input type="file" class="form-control" id="profilePicture" name="profilePicture" required="true" placeholder="Profile picture"/>
+                            </div>
+
+
+                        </td>
+                    </tr>
+
+
+                    <tr>
+                        <td colspan="2" align="center">
+                            <button type="Submit" onclick="validateDetails()" class="btn btn-primary">Submit</button>
+                            <button type="button" onclick="this.form.reset();" class="btn btn-secondary">Clear</button>
+
+                        </td>
+
+                    </tr>
+
+
+
+
+
+
+                    </tr>
+                </table>
+
+
+
+            </div>
+        </form>
+    </div>
+</div>
 
 </body>
 </html>

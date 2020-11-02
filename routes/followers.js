@@ -13,7 +13,7 @@ router.get('/:userId', async function(req, res, next) {
     if (followers.length==0) {
         console.log('No followers found');
         //res.send({success: false,  message: "No followers found"});
-        res.render('followers', { data:{ titleView: 'Followers Page', customer: { _id:req.params.userId }, followers: followers  } });
+        res.render('followers', { data:{ titleView: 'Followers Page',  customer: req.session.user , isAuthenticated: req.session.isLoggedIn  } });
         //res.end();
 
 
@@ -30,7 +30,7 @@ router.get('/:userId', async function(req, res, next) {
         //res.send({success: true, data: { followers }});
         userController.getUsers(followIDs,function(err,cust){
             //console.log(cust);
-            res.render('followers', { data:{ titleView: 'Followers Page', customer: { _id:req.params.userId }  , followers: followers, users:cust } });
+            res.render('followers', { data:{ titleView: 'Followers Page',  customer: req.session.user , isAuthenticated: req.session.isLoggedIn  , followers: followers, users:cust } });
 
         })
 
@@ -69,7 +69,7 @@ console.log("inside add follower");
 
 
 });
-
+/*
 router.delete(':userId', async function(req, res, next) {
 
     console.log(req.params.userId);
@@ -79,11 +79,12 @@ router.delete(':userId', async function(req, res, next) {
     res.send({success: true,  message: "record deleted"});
     //res.send('respond with a delete resource');
 });
+*/
 
-router.delete(':userId/:followUserId', async function(req, res, next) {
-
-    console.log(req.params.userId);
-    const result = await Followers.deleteOne({userId:req.params.userId, followUserId:req.params.followUserId});
+router.delete('/', async function(req, res, next) {
+    console.log(req.body);
+    //console.log(req.params.userId);
+    const result = await Followers.deleteOne({userId:req.body.userId, followUserId:req.body.followUserId});
     console.log(result);
 
     res.send({success: true,  message: "record deleted"});
